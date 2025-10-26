@@ -1,0 +1,15 @@
+<!-- src/app/components/filter-bar/filter-bar.component.html -->
+<div class="filter-bar">
+  <input
+    type="text"
+    placeholder="Search by title..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearchTermChange()"
+  />
+
+  <select [(ngModel)]="selectedCategory" (change)="onCategorySelected($event)">
+    <option *ngFor="let cat of categories" [value]="cat">
+      {{ cat }}
+    </option>
+  </select>
+</div>

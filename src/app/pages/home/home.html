@@ -1,0 +1,19 @@
+<div class="home-container">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <!-- Filter Bar -->
+  <app-filter-bar
+    [categories]="categories"
+    (search)="onSearch($event)"
+    (categoryChange)="onCategoryChange($event)">
+  </app-filter-bar>
+
+  <!-- Books Grid -->
+  <div class="book-grid">
+    <app-book-card
+      *ngFor="let book of filteredBooks"
+      [book]="book">
+    </app-book-card>
+  </div>
+</div>

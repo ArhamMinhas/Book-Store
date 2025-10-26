@@ -1,0 +1,17 @@
+<!-- src/app/components/book-card/book-card.component.html -->
+<div class="book-card" (click)="viewDetails()">
+  <img [src]="book.image" [alt]="book.title" class="book-image" />
+
+  <div class="book-info">
+    <h3>{{ book.title }}</h3>
+    <p class="author">by {{ book.author }}</p>
+    <p class="category">{{ book.category }}</p>
+
+    <div class="price">
+      <span *ngIf="book.price && book.price > 0; else freeBook">
+        {{ book.price | currency:'USD':'symbol' }}
+      </span>
+      <ng-template #freeBook>Free</ng-template>
+    </div>
+  </div>
+</div>
