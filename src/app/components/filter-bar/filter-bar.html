@@ -1,4 +1,3 @@
-<!-- src/app/components/filter-bar/filter-bar.component.html -->
 <div class="filter-bar">
   <input
     type="text"
@@ -7,7 +6,12 @@
     (input)="onSearchTermChange()"
   />
 
-  <select [(ngModel)]="selectedCategory" (change)="onCategorySelected($event)">
+  <select
+    [(ngModel)]="selectedCategory"
+    (change)="onCategorySelected($event)"
+    required
+  >
+    <option value="" disabled selected hidden>Search by category</option>
     <option *ngFor="let cat of categories" [value]="cat">
       {{ cat }}
     </option>

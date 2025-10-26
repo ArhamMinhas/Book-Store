@@ -1,37 +1,112 @@
-/* src/app/components/filter-bar/filter-bar.component.css */
+/* ===========================
+   Filter Bar Styles — Book Heaven
+   =========================== */
+
 .filter-bar {
+  width: 1400px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
-  padding: 1rem;
-  background: #f3f3f3;
+  padding: 1.5rem 2rem;
+
+  border-radius: 12px;
+  
+  max-width: 900px;
+  margin: 0 0 0rem; /* push down below fixed header */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Field */
+.filter-bar input[type='text'] {
+  flex: 2;
+  padding: 0.8rem 1rem;
+  border: 1.8px solid #ccc;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #333;
 }
 
-.filter-bar input {
-  padding: 0.5rem;
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.filter-bar input::placeholder {
+  color: #999;
+  font-weight: 400;
 }
 
+/* On focus effect */
+.filter-bar input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 6px rgba(102, 126, 234, 0.4);
+}
+
+/* Dropdown */
 .filter-bar select {
-  padding: 0.5rem;
-  border-radius: 4px;
+  width: 500px;
+  flex: 0;
+  padding: 0.8rem 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #764ba2 50%),
+    linear-gradient(135deg, #764ba2 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1rem + 2px),
+    calc(100% - 15px) calc(1rem + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.filter-bar button {
+.filter-bar select option ::placeholder{
   padding: 0.5rem 1rem;
-  background-color: #222;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  color: #999;
 }
 
-.filter-bar button:hover {
-  background-color: #333;
+/* Hover + Focus */
+.filter-bar select:hover,
+.filter-bar select:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 6px rgba(118, 75, 162, 0.3);
 }
+
+/* Placeholder option styling */
+.filter-bar select option[disabled] {
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+    margin: 5rem 1rem 2rem;
+  }
+
+  .filter-bar input,
+  .filter-bar select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-bar {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .filter-bar input,
+  .filter-bar select {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+/* Subtle hover animation for entire bar */

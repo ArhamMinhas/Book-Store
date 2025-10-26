@@ -1,27 +1,145 @@
-/* src/app/components/header/header.component.css */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #222;
-  color: #fff;
-  padding: 1rem 2rem;
+/* ===========================
+   Global Fix for spacing
+   =========================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  background-color: #f7f8fc; /* subtle page background */
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-.logo span {
+app-root, app-header {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* ===========================
+   Header Styles — Book Heaven
+   =========================== */
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: #fff;
+  position: fixed; /* keeps it at top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin: 0;
+  border-radius: 0;
+  height: 85px;
+}
+
+/* Logo */
+.logo {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-left: 5px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  user-select: none;
+}
+/* ===== Logo Image Styling ===== */
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: inline-block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.9));
 }
 
-.nav-links a {
-  color: #ccc;
-  text-decoration: none;
-  margin-left: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
+/* Make text align nicely beside logo */
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #fff;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  position: relative;
+  color: #ffffffcc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+nav a.active::after {
+  width: 100%;
+  background: #fff;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem 1.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
 }

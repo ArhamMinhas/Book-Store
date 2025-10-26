@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #f4f6fb;
+  color: #212121;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* ===== Root Theme Variables ===== */
+:root {
+  --primary-dark: #004aad;
+  --primary: #007bff;
+  --accent: #ffc107;
+  --white: #ffffff;
+  --text-dark: #212121;
+  --bg-light: #f4f6fb;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Anchors ===== */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ===== Page Background ===== */
+body {
+  background: var(--bg-light);
+}
+
+/* ===== Utility Classes ===== */
+.text-center {
+  text-align: center;
+}
+.shadow {
+  box-shadow: 0 4px 8px var(--shadow);
+}

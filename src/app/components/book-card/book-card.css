@@ -1,0 +1,131 @@
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --accent: #ffc107;
+  --white: #ffffff;
+  --gray-light: #f4f6fb;
+  --gray-border: #e0e0e0;
+  --text-dark: #212121;
+  --shadow-light: rgba(0, 0, 0, 0.06);
+  --shadow-hover: rgba(102, 126, 234, 0.25);
+}
+
+/* ===== Book Card ===== */
+.book-card {
+  position: relative;
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 3px 10px var(--shadow-light);
+  border: 1px solid var(--gray-border);
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 230px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect — soft and modern */
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px var(--shadow-hover);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* ===== Book Image ===== */
+.book-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+/* Zoom-in effect on hover */
+.book-card:hover .book-image {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ===== Book Info ===== */
+.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Title */
+.book-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: linear-gradient(90deg, #667eea, #764ba2);
+  transition: color 0.3s ease;
+}
+
+.book-card:hover h3 {
+  color: var(--primary-dark);
+}
+
+/* Author */
+.book-info .author {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Category */
+.book-info .category {
+  font-size: 0.85rem;
+  color:linear-gradient(90deg, #667eea, #764ba2);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Price */
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Price hover */
+.book-card:hover .price {
+  background:  linear-gradient(90deg, #667eea, #764ba2);
+  color: var(--white);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .book-card {
+    max-width: 200px;
+  }
+
+  .book-image {
+    height: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .book-image {
+    height: 200px;
+  }
+
+  .book-info h3 {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+}

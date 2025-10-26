@@ -1,21 +1,67 @@
-.about-page {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* ===========================
+   About Page — Book Heaven
+   =========================== */
+
+/* Root container with background consistency */
+.about-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f6f8ff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem; /* offset for fixed header */
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
+/* About Page Content Box */
+.about-page {
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem 3rem;
+  margin: 3rem auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: #222;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Heading */
 .about-page h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
+/* Paragraphs */
 .about-page p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Highlight text consistency */
+.about-page strong {
+  color: #667eea;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1.8rem 1.2rem;
+    margin: 2rem 1rem;
+  }
+
+  .about-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-page p {
+    font-size: 0.95rem;
+  }
 }
