@@ -1,19 +1,15 @@
-<div class="filter-bar">
-  <input
-    type="text"
-    placeholder="Search by title..."
-    [(ngModel)]="searchTerm"
-    (input)="onSearchTermChange()"
-  />
+<div class="filter-bar-container">
+  <div class="filter-bar">
+    <input
+      type="text"
+      placeholder="Search by title..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearchTermChange()"
+    />
+  </div>
 
-  <select
-    [(ngModel)]="selectedCategory"
-    (change)="onCategorySelected($event)"
-    required
-  >
-    <option value="" disabled selected hidden>Search by category</option>
-    <option *ngFor="let cat of categories" [value]="cat">
-      {{ cat }}
-    </option>
-  </select>
+  <!-- Book Count -->
+  <div class="filter-info">
+    {{ filteredCount }} books found
+  </div>
 </div>

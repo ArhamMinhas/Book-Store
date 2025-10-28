@@ -1,19 +1,22 @@
 <div class="home-container">
-  <!-- Header -->
-  <app-header></app-header>
+  <!-- Sidebar -->
+  <app-sidebar (categorySelected)="onCategoryChange($event)"></app-sidebar>
 
-  <!-- Filter Bar -->
-  <app-filter-bar
-    [categories]="categories"
-    (search)="onSearch($event)"
-    (categoryChange)="onCategoryChange($event)">
-  </app-filter-bar>
+  <!-- Main Section -->
+  <div class="home-content">
+    <!-- Filter Bar (Search + Count) -->
+<app-filter-bar
+  (search)="onSearch($event)"
+  [filteredCount]="filteredBooks.length"
+></app-filter-bar>
 
-  <!-- Books Grid -->
-  <div class="book-grid">
-    <app-book-card
-      *ngFor="let book of filteredBooks"
-      [book]="book">
-    </app-book-card>
+    <ng-template #noBooks>
+      <p class="no-books">No books found for this filter.</p>
+    </ng-template>
+
+    <!-- Book List -->
+    <div class="book-grid">
+      <app-book-card *ngFor="let book of filteredBooks" [book]="book"></app-book-card>
+    </div>
   </div>
 </div>

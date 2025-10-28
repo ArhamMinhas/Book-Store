@@ -13,5 +13,9 @@
       </span>
       <ng-template #freeBook>Free</ng-template>
     </div>
+
+    <button id="wishlist-button" (click)="toggleWishlist($event)">
+      {{ isWishlisted ? '❤️ Saved' : '♡ Add to Wishlist' }}
+    </button>
   </div>
 </div>

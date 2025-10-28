@@ -1,0 +1,28 @@
+.page-container {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content {
+  flex: 1;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 70vh;
+}
+
+@media (max-width: 900px) {
+  .page-container {
+    flex-direction: column;
+    padding-top: 4rem;
+  }
+}

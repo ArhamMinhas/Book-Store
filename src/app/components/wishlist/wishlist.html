@@ -1,0 +1,23 @@
+<div class="wishlist">
+  <h3>Your Wishlist ({{ wishlist.length }})</h3>
+
+  <div *ngIf="wishlist.length === 0" class="empty">
+    <p>Your wishlist is empty — go add some books!</p>
+  </div>
+
+  <ul *ngIf="wishlist.length > 0" class="wish-list">
+    <li *ngFor="let b of wishlist" class="wish-item">
+      <img [src]="b.image || '/assets/images/book-placeholder.png'" alt="{{ b.title }}" />
+      <div class="meta">
+        <div class="title">{{ b.title }}</div>
+        <div class="author">{{ b.author }}</div>
+        <div class="price" *ngIf="b.price">Rs. {{ b.price }}</div>
+      </div>
+      <button class="btn-remove" (click)="remove(b)">Remove</button>
+    </li>
+  </ul>
+
+  <div class="actions" *ngIf="wishlist.length > 0">
+    <button class="btn-clear" (click)="clearAll()">Clear Wishlist</button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- Sidebar Toggle (Visible when closed) -->
+<div class="sidebar-toggle" *ngIf="!isOpen" (click)="toggleSidebar()">
+  ⋯
+</div>
+
+<!-- Sidebar -->
+<nav class="sidebar" [class.closed]="!isOpen">
+  <!-- Sidebar Header with Close Button -->
+  <div class="sidebar-header">
+    <h4 class="sidebar-title">Categories</h4>
+    <button class="close-btn" (click)="toggleSidebar()">✕</button>
+  </div>
+
+  <ul>
+    <li
+      *ngFor="let category of categories"
+      [class.active]="category === activeCategory"
+      (click)="selectCategory(category)"
+    >
+      {{ category }}
+    </li>
+  </ul>
+
+  <!-- Wishlist Section -->
+  <div class="wishlist-section">
+    <h4>
+      Your Wishlist ({{ wishlist.length }})
+      <span class="heart" [class.pulse]="heartPulse">❤️</span>
+    </h4>
+
+    <div *ngIf="wishlist.length === 0" class="empty-wishlist">
+      <p>No books yet ❤️</p>
+    </div>
+
+    <div *ngFor="let book of wishlist" class="wishlist-item">
+      <img [src]="book.image" alt="{{ book.title }}" />
+      <div class="wishlist-info">
+        <span>{{ book.title }}</span>
+        <button (click)="removeFromWishlist(book.id)">×</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="sidebar-footer">Filter or Manage Wishlist</p>
+</nav>

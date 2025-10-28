@@ -1,5 +1,5 @@
 /* ===========================
-   Home Page — Book Heaven (Final Polished Version)
+   Home Page — Book Heaven (Final Polished + Sidebar Safe Version)
    =========================== */
 
 /* ===== Root Container ===== */
@@ -8,10 +8,12 @@
   min-height: 100vh;
   background: linear-gradient(to bottom right, #f6f8ff 0%, #ffffff 80%);
   margin: 0;
-  padding-top: 6rem; /* space for fixed header */
+  padding-top: 6rem; /* below fixed header */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* ✅ align sidebar + main content horizontally */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
   overflow-x: hidden;
   font-family: "Segoe UI", Roboto, sans-serif;
   position: relative;
@@ -30,27 +32,36 @@
   filter: blur(10px);
 }
 
+/* ===== Sidebar Spacing Fix ===== */
+app-sidebar {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5; /* sits above background but below header */
+}
+
 /* ===== Filter Bar Section ===== */
 app-filter-bar {
   position: sticky;
-  top: 40px; /* sits right below header */
+  top: 1px; /* ✅ sits below header */
   z-index: 99;
   width: 100%;
-  max-width: 950px;
-  margin: 70px auto 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  max-width: 650px;
+  margin: 1rem auto 2rem;
+ 
+ 
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
   padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: center;
   transition: box-shadow 0.3s ease;
 }
-
-/* Subtle hover glow */
-app-filter-bar:hover {
-  box-shadow: 0 10px 25px rgba(118, 75, 162, 0.15);
+/* ===== Main Content Wrapper ===== */
+.home-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ===== Books Grid Layout ===== */
@@ -59,7 +70,6 @@ app-filter-bar:hover {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
   justify-items: center;
   padding: 2rem 1rem 4rem;
   margin-top: 1rem;
@@ -81,7 +91,22 @@ app-book-card:hover {
   box-shadow: 0 10px 24px rgba(102, 126, 234, 0.25);
 }
 
-/* ===== Optional Divider (for visual flow) ===== */
+/* ===== Filter Info & Empty States ===== */
+.filter-info {
+  margin: 1rem 0;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+}
+
+.no-books {
+  margin: 1rem 0;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* ===== Decorative Divider ===== */
 .book-grid::after {
   content: "";
   display: block;
@@ -92,7 +117,7 @@ app-book-card:hover {
   border-radius: 2px;
 }
 
-/* ===== Responsive Layout ===== */
+/* ===== Responsive Layouts ===== */
 
 /* Large Screens */
 @media (max-width: 1200px) {
@@ -104,6 +129,12 @@ app-book-card:hover {
 
 /* Medium Screens */
 @media (max-width: 992px) {
+  .home-container {
+    flex-direction: column; /* ✅ Sidebar moves on top */
+    align-items: center;
+    padding-top: 7rem;
+  }
+
   app-filter-bar {
     top: 80px;
     width: 95%;
@@ -118,7 +149,8 @@ app-book-card:hover {
 /* Tablets */
 @media (max-width: 768px) {
   .home-container {
-    padding-top: 5.5rem;
+    flex-direction: column;
+    padding-top: 6rem;
   }
 
   app-filter-bar {

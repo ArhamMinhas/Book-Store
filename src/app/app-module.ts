@@ -12,6 +12,7 @@ import { About } from './pages/about/about';
 import { NotFound } from './pages/not-found/not-found';
 import { BookCardComponent } from './components/book-card/book-card';
 
+
 @NgModule({
   declarations: [
     App,
@@ -19,7 +20,8 @@ import { BookCardComponent } from './components/book-card/book-card';
     BookDetail,
     About,
     NotFound,
-    BookCardComponent
+    BookCardComponent,
+    
   ],
   imports: [
     BrowserModule,

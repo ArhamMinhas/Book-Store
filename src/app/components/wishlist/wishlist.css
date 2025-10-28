@@ -1,0 +1,11 @@
+.wishlist { background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); }
+.wish-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.wish-item { display: flex; gap: 0.6rem; align-items: center; padding: 0.5rem; border-radius: 6px; }
+.wish-item img { width: 46px; height: 64px; object-fit: cover; border-radius: 4px; }
+.meta { flex: 1; font-size: 0.95rem; }
+.title { font-weight: 600; }
+.author { color: #666; font-size: 0.85rem; }
+.btn-remove { background: transparent; border: 1px solid #e74c3c; padding: 0.4rem 0.6rem; border-radius: 6px; color: #e74c3c; cursor: pointer; }
+.btn-clear { background: #e74c3c; color: white; border: none; padding: 0.5rem 0.8rem; border-radius: 6px; cursor: pointer; }
+.empty { color: #666; font-style: italic; }
+.wishlist-footer { margin-top: 1rem; text-align: right; }

@@ -8,5 +8,9 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('book-store');
+
+  onCategory(selected: string) {
+    console.log('Category selected:', selected);
+  }
   
 }

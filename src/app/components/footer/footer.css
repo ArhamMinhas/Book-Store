@@ -1,0 +1,91 @@
+/* ===========================
+   Footer — BookHeaven
+   =========================== */
+.app-footer {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
+  height: 100px;
+}
+
+.app-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* ===== Brand Section ===== */
+.left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 36px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ===== Nav Links ===== */
+.app-footer nav a {
+  margin: 0 0.6rem;
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+.app-footer nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===== Social Icons ===== */
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.socials a {
+  color: #fff;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.socials a:hover {
+  color: #ffdf6b;
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* ===== Copyright ===== */
+.right small {
+  display: block;
+  font-size: 0.8rem;
+  color: #e5e5e5;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .app-footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .app-footer nav {
+    margin: 0.5rem 0;
+  }
+}

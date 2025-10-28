@@ -1,14 +1,7 @@
 /* ===========================
    Global Fix for spacing
    =========================== */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-  background-color: #f7f8fc; /* subtle page background */
-  font-family: 'Segoe UI', Roboto, sans-serif;
-}
+
 
 app-root, app-header {
   display: block;

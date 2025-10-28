@@ -7,19 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './filter-bar.css',
 })
 export class FilterBarComponent {
-  @Input() categories: string[] = [];
+  @Input() filteredCount: number = 0; // ✅ added for "X books found"
   @Output() search = new EventEmitter<string>();
-  @Output() categoryChange = new EventEmitter<string>();
-
   searchTerm: string = '';
-  selectedCategory: string = 'All';
 
   onSearchTermChange(): void {
     this.search.emit(this.searchTerm);
-  }
-
-  onCategorySelected(event: Event): void {
-    const select = event.target as HTMLSelectElement;
-    this.categoryChange.emit(select.value);
   }
 }
